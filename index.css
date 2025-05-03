@@ -113,7 +113,7 @@ footer a {
   max-width: 900px;
   width: 100%;
   margin: 96px auto;
-  margin-top: 4rem;
+  margin-top: 70px;
   padding-top: 80px;
 }
 
@@ -343,6 +343,40 @@ footer a {
 
 .nav-toggle {
   display: none;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 1000;
+}
+
+.nav-item {
+  color: #666;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px 15px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.nav-item:hover {
+  color: #333;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-item.active {
+  color: #1a73e8;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
