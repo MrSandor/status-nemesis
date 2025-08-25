@@ -113,6 +113,8 @@ footer a {
   max-width: 900px;
   width: 100%;
   margin: 96px auto;
+  margin-top: 70px;
+  padding-top: 80px;
 }
 
 .headline {
@@ -294,6 +296,57 @@ footer a {
   border: none;
   border-top: 1px solid #ededed;
   margin-top: 16px;
+}
+
+/* 导航栏样式 */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #0c75c0;  /* 浅蓝色背景 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 24px;
+    margin: 0 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background: #bbdefb;
+    color: #1565c0;
+}
+
+.nav-item.active {
+    background: #bbdefb;
+    color: #1565c0;
+    font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+        width: 90%;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 800px) {

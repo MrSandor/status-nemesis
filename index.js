@@ -108,31 +108,35 @@ function templatizeString(text, parameters) {
 
 function getStatusText(color) {
   return color == "nodata"
-    ? "No Data Available"
+    ? "没有数据"
     : color == "success"
-    ? "Fully Operational"
+    ? "全部在线"
     : color == "failure"
-    ? "Major Outage"
+    ? "重大中断"
     : color == "partial"
-    ? "Partial Outage"
-    : "Unknown";
+    ? "部分中断"
+    : "未知";
 }
 
 function getStatusDescriptiveText(color) {
   return color == "nodata"
-    ? "No Data Available: Health check was not performed."
+    ? "没有数据：未执行运行状况检查。"
     : color == "success"
-    ? "No downtime recorded on this day."
+    ? "这一天没有记录停机的一刻"
     : color == "failure"
-    ? "Major outages recorded on this day."
+    ? "当天记录的重大停电事件"
     : color == "partial"
-    ? "Partial outages recorded on this day."
-    : "Unknown";
+    ? "当天记录了部分停电"
+    : "未知";
+}
+
+function formatChineseDate(date) {
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 }
 
 function getTooltip(key, date, quartile, color) {
   let statusText = getStatusText(color);
-  return `${key} | ${date.toDateString()} : ${quartile} : ${statusText}`;
+  return `${key} | ${formatChineseDate(date)} : ${quartile} : ${statusText}`;
 }
 
 function create(tag, className) {
@@ -215,7 +219,7 @@ function showTooltip(element, key, date, color) {
   clearTimeout(tooltipTimeout);
   const toolTipDiv = document.getElementById("tooltip");
 
-  document.getElementById("tooltipDateTime").innerText = date.toDateString();
+  document.getElementById("tooltipDateTime").innerText = formatChineseDate(date);
   document.getElementById("tooltipDescription").innerText =
     getStatusDescriptiveText(color);
 

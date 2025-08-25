@@ -1,15 +1,16 @@
 <html>
   <head>
-    <title>Status Page</title>
+    <title>Culip's状态页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="logo.png"/>
     <script src="index.js"></script>
   </head>
   <body>
+    
     <div class="pageContainer">
-      <div class="headline">
-        <img src="logo.svg" alt="Logo" width="200px" />
-        <span> System Status </span>
+      <div class="headline" style="text-align: center;color: blueviolet;">
+        <h1> Culip的各个服务状态 </h1>
       </div>
       <div id="reports" class="reportContainer"></div>
       <div id="tooltip" class="tooltip" style="opacity: 0">
@@ -37,16 +38,13 @@
           </div>
           <div class="statusSubtitle">
             <div class="sectionUrl"><a href="$url">$url</a></div>
-            <div class="statusUptime">$upTime in the last 30 days</div>
+            <div class="statusUptime">过去30天内运行时间为$upTime</div>
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      Forked from
-      <a href="https://github.com/statsig-io/statuspage/"
-        >Statsig's Open-Source Status Page</a
-      >.
+    <footer style="color: red;">
+      每三分钟检测一次
     </footer>
   </body>
   <script>
