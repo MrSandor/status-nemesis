@@ -2,7 +2,7 @@ name: Scheduled Health Check
 
 on:
   schedule:
-    - cron: "30 * * * *" # cada hora a y media
+    - cron: "* * * * *" # cada minuto
   workflow_dispatch:      # permite lanzarlo manualmente también
 
 jobs:
