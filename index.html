@@ -8,8 +8,8 @@
   <body>
     <div class="pageContainer">
       <div class="headline">
-        <img src="logo.svg" alt="Logo" width="200px" />
-        <span> System Status </span>
+        <img src="https://i.fmfile.com/I6T6mqpNBgABvGUvJeQIS/LogoGrandeVerde(1).png" alt="Logo" width="200px" />
+        <span> Nemesis Status </span>
       </div>
       <div id="reports" class="reportContainer"></div>
       <div id="tooltip" class="tooltip" style="opacity: 0">
@@ -37,19 +37,19 @@
           </div>
           <div class="statusSubtitle">
             <div class="sectionUrl"><a href="$url">$url</a></div>
-            <div class="statusUptime">$upTime in the last 30 days</div>
+            <div class="statusUptime">$upTime en los últimos 30 días</div>
           </div>
         </div>
       </div>
     </div>
-    <footer>
-      Forked from
-      <a href="https://github.com/statsig-io/statuspage/"
-        >Statsig's Open-Source Status Page</a
-      >.
+    <footer style="text-align:center; margin-top:40px; font-size:14px; color:#666;">
+      <p>
+        © <span id="year"></span> Nemesis Community. Todos los derechos reservados.
+      </p>
     </footer>
   </body>
   <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
     genAllReports();
   </script>
 </html>
